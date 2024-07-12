@@ -1,18 +1,17 @@
 import ReactDOM from 'react-dom/client';
 
-import App from './app/App';
+import Layout from './components/layout/Layout';
 import './index.css';
-import Lesson08 from './lessons/lesson08/Lesson08';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <>
-    <App />
+    {/* <App /> */}
     {/* <Lesson07/> */}
-    <Lesson08 />
-
+    {/* <Lesson08 /> */}
+    <Layout />
   </>
 );
 
