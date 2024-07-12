@@ -1,4 +1,4 @@
-import "./myInput.css";
+import styles from "./myInput.module.css";
 
 interface IInputProps {
   label?: string;
@@ -11,7 +11,7 @@ export default function MyInput({ label = 'default', name='input', type='text', 
 
   return (
     <>
-      <label className='label'>{label}</label>
+      <label className={styles.label}>{label}</label>
       <input type={type} name={name} placeholder={placeholder} />
     </>
   );
