@@ -1,7 +1,6 @@
 import ReactDOM from 'react-dom/client';
-
-import StarWarsGallery from './components/starWarsGallery/StarWarsGallery';
 import './index.css';
+import Lesson09 from './lessons/lesson09/Lesson09';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -12,7 +11,8 @@ root.render(
     {/* <Lesson07/> */}
     {/* <Lesson08 /> */}
     {/* <Layout /> */}
-    <StarWarsGallery />
+    {/* <StarWarsGallery /> */}
+    <Lesson09 />
   </>
 );
 
