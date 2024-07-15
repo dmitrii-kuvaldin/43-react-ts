@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom/client';
 
-import Layout from './components/layout/Layout';
+import StarWarsGallery from './components/starWarsGallery/StarWarsGallery';
 import './index.css';
 
 const root = ReactDOM.createRoot(
@@ -11,7 +11,8 @@ root.render(
     {/* <App /> */}
     {/* <Lesson07/> */}
     {/* <Lesson08 /> */}
-    <Layout />
+    {/* <Layout /> */}
+    <StarWarsGallery />
   </>
 );
 
