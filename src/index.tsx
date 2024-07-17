@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Lesson09 from './lessons/lesson09/Lesson09';
+import Lesson11 from './lessons/lesson11/Lesson11';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -12,7 +12,8 @@ root.render(
     {/* <Lesson08 /> */}
     {/* <Layout /> */}
     {/* <StarWarsGallery /> */}
-    <Lesson09 />
+    {/* <Lesson09 /> */}
+    <Lesson11/>
   </>
 );
 
