@@ -1,0 +1,14 @@
+.genderForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.genderForm > input {
+  margin-bottom: 3px;
+}
+
+.genderForm > button {
+  border: none;
+  border-radius: 2px;
+  background-color: rgb(255, 208, 255);
+}
