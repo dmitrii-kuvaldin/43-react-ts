@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import MyButton from '../myButton/MyButton';
 import { IProduct } from '../shop/Shop';
 
 const initialProduct: IProduct = {
@@ -34,6 +35,9 @@ export default function ProductPage() {
       <h3>{product.title}</h3>
       <p>{product.description}</p>
       <img src={product.image} width={200} alt="" />
+      <div>
+        <Link to={'/shop'}><MyButton name='back to shop' /></Link>
+      </div>
     </div>
   );
 }

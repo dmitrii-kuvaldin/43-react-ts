@@ -39,7 +39,7 @@ const Shop = () => {
   }, []);
 
   console.log('render!');
-
+  
   return (
     <>
       <h3>Shop 🛒</h3>
