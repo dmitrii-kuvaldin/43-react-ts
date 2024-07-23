@@ -1,5 +1,5 @@
 import MyButton from '../../components/myButton/MyButton';
-import Counter from '../../counter/Counter';
+import Counter from '../../components/counter/Counter';
 
 function Lesson07() {
   // типизация примитивный тип данных

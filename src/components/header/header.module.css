@@ -1,0 +1,17 @@
+.header {
+  width: 100%;
+  background-color: orange;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.header>a:hover {
+  text-decoration: underline;
+}
+
+.active {
+  text-decoration: underline;
+}
