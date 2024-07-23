@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import style from "./shop.module.css";
+import ProductCard from '../productCard/ProductCard';
 
 
 // 1. прописали типизацию для объекта из массива из API
@@ -44,17 +45,9 @@ const Shop = () => {
       <h3>Shop 🛒</h3>
       {products.length > 0 && (
         <div className={style.container}>
-          {/* 4. map() объектов из массива */}
+
           {products.map((product) => (
-            // 5. этот код можно вынести в отдельный компонент и данные передавать через props
-            <div key={product.id} className={style.card}>
-              <h5>{product.title.length > 20 ? product.title.substring(0, 20) + '...' : product.title}</h5>
-              <span>{product.price}$</span>
-              <div className={style.imgWrapper}>
-                <img src={product.image} alt={product.title} />
-              </div>
-            </div>
-            // здесь заканчивается код для отдельной карточки
+            <ProductCard key={product.id} id={product.id} image={product.image} title={product.title} price={product.price} rate={product.rating.rate} count={product.rating.count} />
           ))}
         </div>
       )}
