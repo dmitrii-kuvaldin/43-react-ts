@@ -21,8 +21,6 @@ root.render(
         <Route path='/shop' element={<Shop />} />
         {/* импортируем компонент, указав в path параметр id через двоеточие */}
         <Route path='/shop/:id' element={<ProductPage />} />
-
-
         <Route path='/gender-form' element={<FormGender />} />
         <Route path='/robot-form' element={<RobotForm />} />
         <Route path='/my-form' element={<MyForm />} />
