@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
-import style from "./shop.module.css";
+import { useEffect } from "react";
+import { getProducts } from '../../features/products/productsAction';
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
+import Loader from '../loader/Loader';
 import ProductCard from '../productCard/ProductCard';
+import style from "./shop.module.css";
 
-
-// 1. прописали типизацию для объекта из массива из API
 
 export interface IProduct {
   id: number;
@@ -19,33 +20,28 @@ export interface IProduct {
 }
 
 const Shop = () => {
+  // * Работа с данными в компонентах через redux:
+  // * useAppDispatch - отправка actions, функций для работы с данными
+  // * useAppSelector() - получение данных из store
 
-  // 3. кладем данным в state и типизируем его. изменение state вызовет rerender компонента
-  const [products, setProducts] = useState<IProduct[]>([]);
+  // кладем в переменную dispatch вызов useAppDispatch()
+  const dispatch = useAppDispatch();
 
-
-  // 2. объявляем функцию через async / await
-  async function getData() {
-    const res = await fetch("https://fakestoreapi.com/products");
-    const data = await res.json();
-    setProducts(data);
-  }
-
+  // получаем данные из store через useAppSelector()
+  const { products, isLoading, error } = useAppSelector(state => state.products);
 
   useEffect(() => {
-    // 2.2 вызываем асинхронную функцию в useEffect() чтобы не попасть в бесконечный цикл
-    getData();
-    console.log('get data!');
-  }, []);
+    // вызываем dispatch и внутри в аргументе вызываем нужный action
+    dispatch(getProducts());
+  }, [dispatch]);
 
-  console.log('render!');
-  
+
   return (
     <>
-      <h3>Shop 🛒</h3>
+      {error && <h3>{error}</h3>}
+      {isLoading && <Loader />}
       {products.length > 0 && (
         <div className={style.container}>
-
           {products.map((product) => (
             <ProductCard key={product.id} id={product.id} image={product.image} title={product.title} price={product.price} rate={product.rating.rate} count={product.rating.count} />
           ))}
