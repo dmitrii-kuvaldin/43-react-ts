@@ -7,6 +7,11 @@
   justify-content: center;
 }
 
+.header > span {
+  color: rgb(104, 50, 251);
+  margin-right: 20px;
+}
+
 
 .header>a:hover {
   text-decoration: underline;

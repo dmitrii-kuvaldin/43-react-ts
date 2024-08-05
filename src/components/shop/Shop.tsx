@@ -20,18 +20,14 @@ export interface IProduct {
 }
 
 const Shop = () => {
-  // * Работа с данными в компонентах через redux:
-  // * useAppDispatch - отправка actions, функций для работы с данными
-  // * useAppSelector() - получение данных из store
 
-  // кладем в переменную dispatch вызов useAppDispatch()
   const dispatch = useAppDispatch();
-
-  // получаем данные из store через useAppSelector()
   const { products, isLoading, error } = useAppSelector(state => state.products);
 
   useEffect(() => {
-    // вызываем dispatch и внутри в аргументе вызываем нужный action
+    // ! здесь мы отправляем запрос
+    // * мы вызываем action внутри dispatch
+    // * только через dispatch мы можем отправить запрос на изменение данных в redux
     dispatch(getProducts());
   }, [dispatch]);
 
