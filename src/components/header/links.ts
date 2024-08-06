@@ -7,15 +7,11 @@ interface ILinks {
 export const links:ILinks[] = [
   {
     pathname: '/',
-    title: 'home'
+    title: 'star wars'
   },
   {
     pathname: '/shop',
     title: 'shop'
-  },
-  {
-    pathname: '/star-wars-gallery',
-    title: 'star wars'
   },
   {
     pathname: '/gender-form',
@@ -24,9 +20,5 @@ export const links:ILinks[] = [
   {
     pathname: '/robot-form',
     title: 'robot-form'
-  },
-  {
-    pathname: '/my-form',
-    title: 'my-form'
   }
 ];

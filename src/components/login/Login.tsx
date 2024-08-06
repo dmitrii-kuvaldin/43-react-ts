@@ -1,19 +1,19 @@
 import { useNavigate } from 'react-router-dom';
 import { loginUser } from '../../features/auth/authAction';
 import { useAppDispatch } from '../../redux/hooks';
-import styles from './login.module.css'
+import styles from './login.module.css';
 
 import { useFormik } from 'formik';
 
 export interface ILoginFormValues {
-  username: string
-  password: string
+  username: string;
+  password: string;
 }
 
 export default function Login() {
-  const dispatch = useAppDispatch()
+  const dispatch = useAppDispatch();
   // хук для перенаправления маршрутизации
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const formik = useFormik({
     initialValues: {
@@ -23,8 +23,11 @@ export default function Login() {
     onSubmit: (values: ILoginFormValues, { resetForm }) => {
       // ! в values лежат данные из формы, их мы отправляем в action с post запросом
       dispatch(loginUser(values))
-      navigate('/shop')
-      // resetForm();
+        // navigate дождется ответа от сервера и после этого сработает
+        .then(() => {
+          navigate('/');
+          // resetForm();
+        });
     }
   });
 

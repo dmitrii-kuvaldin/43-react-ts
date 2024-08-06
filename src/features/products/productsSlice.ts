@@ -20,7 +20,12 @@ const initialState: IProductState = {
 export const productsSlice = createSlice({
   name: 'productsSlice',
   initialState,
-  reducers: {},
+  reducers: {
+    // ! синхронное действие для очистки данных
+    cleanProducts: (state) => {
+      state.products = []
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getProducts.pending, (state) => {
@@ -39,4 +44,4 @@ export const productsSlice = createSlice({
 });
 
 export default productsSlice;
-// export const { } = productsSlice.actions;
+export const { cleanProducts } = productsSlice.actions;

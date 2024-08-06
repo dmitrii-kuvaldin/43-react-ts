@@ -4,6 +4,7 @@ import styles from './header.module.css';
 import { links } from './links';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { logoutUser } from '../../features/auth/authSlice';
+import { cleanProducts } from '../../features/products/productsSlice';
 
 export default function Header() {
   // забираем данные по user
@@ -17,6 +18,8 @@ export default function Header() {
     localStorage.removeItem('user-token')
     // чистим state, выносим 'мусор' данных за пользователем
     dispatch(logoutUser())
+    // ! чистим продукты
+    dispatch(cleanProducts())
   }
 
   return (
